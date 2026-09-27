@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Krishnanagar Net Pvt Ltd — fast, reliable and secure internet for homes, businesses and institutes.">
+<title>Krishnanagar Net Pvt Ltd | Fast. Reliable. Local.</title>
+<style>
+:root{--navy:#071b49;--navy2:#0d2e68;--blue:#0877e8;--cyan:#23b8ff;--green:#13b85b;--mint:#e9fbf1;--bg:#f6f9fe;--ink:#17233d;--muted:#64738d;--line:#e4ebf5;--white:#fff;--shadow:0 20px 60px rgba(7,27,73,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+button,input,select{font:inherit}a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.topbar{background:var(--navy);color:#dbe7fb;font-size:13px}
+.topbar .inner{min-height:36px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.topbar a{color:#fff;font-weight:800}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:950;color:var(--navy);font-size:18px}
+.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;display:grid;place-items:center;font-size:24px;font-weight:1000;box-shadow:0 10px 25px rgba(8,119,232,.25)}
+.navlinks{display:flex;align-items:center;gap:23px}
+.navlinks>a{font-size:14px;font-weight:800;color:#3f4e68}
+.navlinks>a:hover{color:var(--blue)}
+.nav-actions{display:flex;gap:9px}.mobile-call{display:none}.mobile-call{display:none}
+.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:.2s transform,.2s box-shadow}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,var(--blue),#0758bf);color:#fff;box-shadow:0 12px 25px rgba(8,119,232,.22)}
+.green{background:linear-gradient(135deg,var(--green),#079349);color:#fff;box-shadow:0 12px 25px rgba(19,184,91,.2)}
+.outline{background:#fff;border:1px solid #ccd9ea;color:var(--navy)}
+.menu{display:none;border:0;background:none;font-size:28px;color:var(--navy)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 90% 10%,#bfe9ff 0,transparent 30%),radial-gradient(circle at 5% 90%,#d5f7e4 0,transparent 28%),linear-gradient(135deg,#f8fbff,#eef8f3);padding:72px 0 65px}
+.hero:after{content:"";position:absolute;width:450px;height:450px;border-radius:50%;border:1px solid #0877e81a;right:-150px;bottom:-240px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:#087b43;border:1px solid #bcebd0;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:950;letter-spacing:.4px}
+.hero h1{font-size:clamp(2.7rem,6vw,5.1rem);line-height:1.00;letter-spacing:-4px;color:var(--navy);margin:18px 0}
+.hero h1 span{background:linear-gradient(90deg,var(--blue),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:18px;color:var(--muted);max-width:650px;margin-bottom:27px}
+.hero-actions{display:flex;gap:11px;flex-wrap:wrap}
+.micro{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;color:#51627d;font-size:13px;font-weight:800}
+.micro span:before{content:"✓";color:var(--green);margin-right:6px}
+.hero-offer{background:rgba(255,255,255,.88);border:1px solid #d9e5f2;border-radius:28px;padding:27px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero-offer:before{content:"";position:absolute;width:190px;height:190px;background:#0877e814;border-radius:50%;right:-65px;top:-70px}
+.offer-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.offer-label{color:#087b43;font-weight:950;font-size:12px;letter-spacing:.8px}
+.hot{background:#fff0d7;color:#a85b00;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:950}
+.big-speed{font-size:72px;font-weight:1000;color:var(--blue);line-height:.95;margin:12px 0 4px;letter-spacing:-4px}
+.offer-title{font-size:18px;font-weight:850;color:var(--navy)}
+.offer-price{margin:18px 0;padding:18px;border-radius:18px;background:linear-gradient(135deg,var(--navy),#0b4ca8);color:#fff}
+.offer-price small{display:block;color:#bcd2f4;font-weight:800}.offer-price strong{display:block;font-size:35px;line-height:1.05}.offer-price span{font-size:13px;color:#e3edfc}
+.offer-points{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:14px}
+.point{background:#f5f8fc;border:1px solid var(--line);padding:10px;border-radius:12px;font-size:12px;font-weight:850;color:#40516e}
+section{padding:82px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 42px}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05;color:var(--navy);letter-spacing:-1.7px;margin-bottom:11px}
+.section-head p{color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service{border:1px solid var(--line);border-radius:22px;padding:26px;background:#fff;box-shadow:0 12px 35px rgba(7,27,73,.06);transition:.25s}
+.service:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.service-icon{width:50px;height:50px;border-radius:15px;background:#eaf4ff;color:var(--blue);display:grid;place-items:center;font-size:23px;margin-bottom:17px}
+.service h3{color:var(--navy);margin-bottom:7px}.service p{font-size:14px;color:var(--muted)}
+.plans-section{background:var(--bg)}
+.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filter{border:1px solid #cdd9e9;background:#fff;color:#43526d;border-radius:999px;padding:9px 14px;font-weight:900;cursor:pointer}
+.filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
+.plan{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px;position:relative;box-shadow:0 10px 35px rgba(7,27,73,.06)}
+.plan.featured{border:2px solid var(--green);box-shadow:0 18px 50px rgba(19,184,91,.14)}
+.recommended{position:absolute;right:17px;top:17px;background:var(--mint);color:#087b43;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:1000}
+.plan h3{color:var(--navy);font-size:19px}.speed-number{font-size:52px;font-weight:1000;line-height:1;color:var(--blue);margin:9px 0}.speed-number small{font-size:17px;color:var(--muted);font-weight:850}
+.plan-price{font-size:20px;color:var(--navy);font-weight:950}.plan-price small{font-size:12px;color:var(--muted)}
+.plan ul{list-style:none;margin:18px 0 22px}.plan li{margin:8px 0;color:#52627c;font-size:13px}.plan li:before{content:"✓";color:var(--green);font-weight:1000;margin-right:8px}
+.plan .btn{width:100%}
+.custom{margin-top:20px;background:linear-gradient(135deg,#071b49,#0a4798);border-radius:25px;color:#fff;padding:28px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px}
+.custom h3{font-size:24px}.custom p{color:#c8d8f0;margin-top:4px}
+.custom .btn{background:#fff;color:var(--navy)}
+.coverage{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.cover-card{border:1px solid var(--line);border-radius:25px;padding:30px;background:#fff;box-shadow:var(--shadow)}
+.cover-map{min-height:340px;border-radius:22px;background:radial-gradient(circle at 48% 48%,#2bd27c 0 7px,transparent 8px),radial-gradient(circle at 48% 48%,transparent 0 50px,#13b85b38 51px 52px,transparent 53px),linear-gradient(135deg,#eaf5ff,#f0fbf4);display:grid;place-items:center;position:relative;overflow:hidden}
+.cover-map:after{content:"KRISHNANAGAR";font-size:30px;font-weight:1000;color:#0b3d80;letter-spacing:3px;opacity:.13}
+.check{display:grid;grid-template-columns:1fr auto;gap:9px;margin-top:20px}.check input{border:1px solid #cdd9e9;border-radius:11px;padding:12px 13px;outline:none}.check input:focus{border-color:var(--blue)}
+.result{margin-top:13px;padding:12px;border-radius:12px;display:none;font-size:13px;font-weight:800}
+.result.ok{display:block;background:#e8f8ef;color:#087b43}.result.no{display:block;background:#fff2e6;color:#9a5500}
+.why{background:var(--light)}.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.quote{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow)}.quote p{font-size:20px;color:var(--navy);font-weight:800;line-height:1.4}.quote b{display:block;margin-top:18px;color:var(--green)}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.metric{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.metric strong{font-size:28px;color:var(--blue);display:block}.metric span{color:var(--muted);font-size:13px;font-weight:800}
+.contact{background:linear-gradient(135deg,var(--navy),#0a438e);color:#fff}.contact .section-head h2,.contact .section-head p{color:#fff}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-card{border:1px solid #ffffff25;background:#ffffff10;border-radius:24px;padding:28px}.contact-row{display:flex;gap:13px;margin:16px 0;align-items:flex-start}.contact-row b{display:block}.contact-row span{color:#c7d7ef;font-size:13px}.contact-card input,.contact-card textarea{width:100%;padding:12px;border-radius:11px;border:1px solid #ffffff2d;background:#ffffff0e;color:#fff;margin-bottom:10px;outline:none}.contact-card input::placeholder,.contact-card textarea::placeholder{color:#aebfd9}.contact-card textarea{min-height:105px;resize:vertical}.form-message{display:none;margin-top:8px;color:#bff1d2;font-size:13px;font-weight:800}
+footer{background:#041331;color:#b8c8e1;padding:27px 0}.footer{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer b{color:#fff}
+.floating{position:fixed;right:20px;bottom:20px;z-index:30;display:flex;flex-direction:column;gap:9px}.float-btn{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:20px;box-shadow:0 12px 25px #0002}.call{background:#0877e8}.mail{background:#13b85b}
+.modal{position:fixed;inset:0;background:#03112caa;display:none;place-items:center;padding:20px;z-index:100}.modal.show{display:grid}.modal-box{width:min(520px,100%);background:#fff;border-radius:22px;padding:27px;box-shadow:0 30px 100px #0004;position:relative}.close{position:absolute;right:15px;top:13px;border:0;background:#eef3f9;width:35px;height:35px;border-radius:50%;cursor:pointer}.modal-box h3{color:var(--navy);font-size:25px}.customer-choice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.choice-card{border:1px solid #d6e1ee;background:#f8fbff;border-radius:15px;padding:18px;text-align:left;cursor:pointer;transition:.2s}.choice-card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 10px 25px rgba(8,119,232,.10)}.choice-card strong{display:block;color:var(--navy);font-size:15px;margin-bottom:5px}.choice-card span{display:block;color:var(--muted);font-size:12px;line-height:1.45}.location-box{margin:8px 0 13px;padding:12px 13px;background:#f7fbff;border:1px solid #dce7f3;border-radius:12px}.location-actions{display:flex;gap:8px;flex-wrap:wrap}.location-btn{border:1px solid #cbd9e8;background:#fff;color:var(--navy);border-radius:10px;padding:9px 12px;font-size:12px;font-weight:900;cursor:pointer}.location-btn:hover{border-color:var(--blue);color:var(--blue)}.location-status{font-size:12px;font-weight:800;color:var(--muted);margin-top:8px}.location-status.success{color:#087b43}.location-status.error{color:#a45700}@media(max-width:620px){.customer-choice{grid-template-columns:1fr}}.modal-box p{margin:4px 0 18px}.modal-box input,.modal-box select{width:100%;padding:12px;border:1px solid #cbd8e8;border-radius:11px;margin:6px 0;outline:none}.modal-box .btn{width:100%;margin-top:10px}
+@media(max-width:900px){.hero-grid,.coverage,.why-grid,.contact-grid{grid-template-columns:1fr}.services,.plan-grid{grid-template-columns:repeat(2,1fr)}.menu{display:block}.nav-actions{display:none}.navlinks{display:none;position:absolute;left:4%;right:4%;top:78px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.navlinks.mobile-open{display:flex}.navlinks a{padding:10px 8px}.mobile-call{display:inline-flex;text-align:center}}
+@media(max-width:620px){.topbar .inner{justify-content:center}.hero{padding:55px 0}.hero h1{letter-spacing:-2.5px}.big-speed{font-size:58px}.services,.plan-grid,.stats-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr}.check{grid-template-columns:1fr}.contact-card{padding:22px}section{padding:62px 0}}
+.office-box{margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:25px;padding:26px;box-shadow:var(--shadow)}.office-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:20px;align-items:stretch}.office-copy h3{color:var(--navy);font-size:25px;margin-bottom:8px}.office-copy p{color:var(--muted);font-size:14px}.office-status{margin:14px 0;padding:12px;border-radius:12px;background:#f5f8fc;border:1px solid var(--line);font-size:13px;color:#52627c;font-weight:800}.office-status.success{background:#e8f8ef;color:#087b43;border-color:#bfe8cf}.office-map{min-height:330px;border-radius:18px;overflow:hidden;border:1px solid #d9e4f0}.office-map #officeMap{height:100%;min-height:330px}.office-actions .btn{flex:0 1 auto}.office-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.office-coords{font-size:12px;color:var(--muted);margin-top:10px;word-break:break-word}@media(max-width:900px){.office-grid{grid-template-columns:1fr}}
+.coverage-directory{background:#fff}
+.coverage-search-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:var(--shadow)}
+.coverage-search{display:grid;grid-template-columns:1fr 170px;gap:12px;margin-bottom:14px}
+.coverage-search input{width:100%;padding:15px 16px;border:1px solid #cfdbea;border-radius:12px;font-size:16px;outline:none;color:var(--ink)}
+.coverage-search input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(8,119,232,.08)}
+.directory-result{min-height:0;margin-bottom:14px;font-size:14px}
+.directory-result:empty{display:none}
+.directory-result.ok,.directory-result.warn{display:block;padding:12px 14px;border-radius:12px;font-weight:800}
+.directory-result.ok{background:#e9f8ef;color:#087b43;border:1px solid #bee8ce}
+.directory-result.warn{background:#fff4e7;color:#975800;border:1px solid #f1d2a9}
+.directory-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}
+.directory-map-wrap{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#eef5fb;min-height:400px;position:relative}
+#coverageDirectoryMap{height:400px}
+.map-caption{font-size:11px;color:#7888a0;background:#fff;padding:8px 10px;border-top:1px solid var(--line)}
+.area-directory{border:1px solid var(--line);border-radius:20px;padding:19px;background:#fbfdff}
+.directory-title{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:15px}
+.directory-title strong{display:block;color:var(--navy);font-size:18px}
+.directory-title span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+#areaCount{color:var(--green);background:var(--mint);padding:5px 9px;border-radius:999px;font-weight:900;white-space:nowrap}
+.area-list{display:flex;flex-wrap:wrap;gap:8px}
+.area-pill{border:1px solid #d5e0ec;background:#fff;color:#30445f;border-radius:999px;padding:9px 11px;font-size:12px;font-weight:850;cursor:pointer;transition:.18s}
+.area-pill:hover,.area-pill.selected{border-color:var(--blue);color:var(--blue);box-shadow:0 6px 15px rgba(8,119,232,.08)}
+.directory-note{margin-top:16px;padding-top:15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.5}
+.directory-note a{color:var(--blue);font-weight:900}
+@media(max-width:900px){.directory-layout{grid-template-columns:1fr}.coverage-search{grid-template-columns:1fr}.directory-map-wrap,#coverageDirectoryMap{min-height:330px;height:330px}}
+
+.speed-test-section{background:linear-gradient(135deg,#f7fbff,#eef8f3)}
+.speed-test-card{max-width:980px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.speed-test-card:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(8,119,232,.06);right:-120px;top:-120px}
+.speed-test-top{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.speed-test-copy h3{font-size:27px;color:var(--navy);margin:11px 0 7px}
+.speed-test-copy p{font-size:14px;color:var(--muted)}
+.speed-test-button{min-width:180px}
+.speed-test-status{margin-top:22px;padding:12px 14px;border-radius:12px;background:#f5f8fc;border:1px solid var(--line);color:#536580;font-size:13px;font-weight:800}
+.speed-test-status.running{background:#edf7ff;color:#075bb8;border-color:#cfe6ff}
+.speed-test-status.success{background:#eaf8ef;color:#087b43;border-color:#bde8cf}
+.speed-test-status.error{background:#fff3e8;color:#995600;border-color:#f0d2a8}
+.speed-meter{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.speed-metric{border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center;background:#fbfdff}
+.speed-metric .label{display:block;color:#71819a;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.5px}
+.speed-metric .value{display:block;color:var(--navy);font-size:38px;font-weight:1000;line-height:1.05;margin:8px 0 3px}
+.speed-metric .unit{font-size:12px;color:var(--muted);font-weight:850}
+.speed-progress{margin-top:21px;height:10px;border-radius:999px;background:#e8eef6;overflow:hidden}
+.speed-progress-bar{width:0;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--green));transition:width .25s}
+.speed-meta{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-top:13px;font-size:11px;color:#74829a}
+.speed-actions{display:flex;justify-content:center;gap:9px;margin-top:19px;flex-wrap:wrap}
+.speed-note{margin-top:18px;text-align:center;font-size:11px;color:#78879e}
+@media(max-width:720px){.speed-test-top{grid-template-columns:1fr}.speed-test-button{width:100%}.speed-meter{grid-template-columns:1fr}.speed-test-card{padding:22px}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+</head>
+<body>
+
+<div class="topbar"><div class="container inner"><span>Fast. Reliable. Local. Always With You.</span><span>New connections: Krishnanagar Area · <a href="tel:+9779867400888">9867400888</a></span></div></div>
+
+<header>
+<div class="container nav">
+<a class="brand" href="#"><span class="logo">K</span><span>Krishnanagar Net<br><small style="font-size:11px;color:#087b43">Pvt Ltd</small></span></a>
+<button class="menu" onclick="toggleNav()">☰</button>
+<div class="navlinks" id="navlinks"><a href="#services">Services</a><a href="#speedTest">Speed Test</a><a href="#plans">Plans</a><a href="#coverageDirectory">Coverage Map</a><a href="#officeLocation">Office</a><a href="#why">Why Us</a><a href="#contact">Contact</a><a class="btn primary mobile-call" href="tel:+9779867400888">Call Now</a></div>
+<div class="nav-actions"><a class="btn outline" href="mailto:krishnagarnetpvtltd@gmail.com">Email</a></div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<span class="eyebrow">🌐 YOUR LOCAL INTERNET PARTNER</span>
+<h1>Connect to a <span>world of possibilities.</span></h1>
+<p>Fast, reliable and secure internet for homes, businesses and institutes — with service designed around your time and your trust.</p>
+<div class="hero-actions"><a class="btn primary" href="#plans">Explore Plans →</a><a class="btn outline" href="#coverage">Check Coverage</a></div>
+<div class="micro"><span>High-speed internet</span><span>Stable & secure</span><span>24/7 support</span></div>
+</div>
+<div class="hero-offer">
+<div class="offer-top"><span class="offer-label">NEW CONNECTION OFFER</span><span class="hot">LIMITED OFFER</span></div>
+<div class="big-speed">100</div><div class="offer-title">Mbps High-Speed Internet</div>
+<div class="offer-price"><small>Special new-connection price</small><strong>Rs. 3,500</strong><span>for 3 months · Krishnanagar Area</span></div>
+<div class="offer-points"><div class="point">✓ Free Installation</div><div class="point">✓ No Hidden Charges</div><div class="point">✓ Unlimited Browsing</div><div class="point">✓ 24/7 Support</div></div>
+</div>
+</div>
+</section>
+
+
+<section class="speed-test-section" id="speedTest">
+<div class="container">
+<div class="section-head">
+<h2>Test your internet speed.</h2>
+<p>Measure the connection from the device you are using right now — download, upload and latency.</p>
+</div>
+<div class="speed-test-card">
+<div class="speed-test-top">
+<div class="speed-test-copy">
+<div class="eyebrow">⚡ LIVE CONNECTION TEST</div>
+<h3>How fast is your connection?</h3>
+<p>For a more representative result, pause downloads, video streams and other heavy network activity before starting.</p>
+</div>
+<button id="speedTestStart" class="btn primary speed-test-button" type="button" onclick="startSpeedTest()">Start Speed Test</button>
+</div>
+<div id="speedTestStatus" class="speed-test-status">Ready to test. Your result will be measured in real time.</div>
+<div class="speed-meter">
+<div class="speed-metric"><span class="label">Download</span><span class="value" id="speedDownload">—</span><span class="unit">Mbps</span></div>
+<div class="speed-metric"><span class="label">Upload</span><span class="value" id="speedUpload">—</span><span class="unit">Mbps</span></div>
+<div class="speed-metric"><span class="label">Latency</span><span class="value" id="speedPing">—</span><span class="unit">ms</span></div>
+</div>
+<div class="speed-progress"><div id="speedProgressBar" class="speed-progress-bar"></div></div>
+<div class="speed-meta"><span id="speedPhase">Ready</span><span id="speedTimer">0.0s</span></div>
+<div class="speed-actions">
+<button id="speedStop" class="btn outline" type="button" onclick="stopSpeedTest()" style="display:none">Stop Test</button>
+<button class="btn outline" type="button" onclick="openOfficialSpeedTest()">Open Full Speed Test ↗</button>
+</div>
+<div class="speed-note">Powered by Cloudflare Speedtest. Results can vary with Wi-Fi, device load, network congestion and server distance.</div>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<div class="section-head"><h2>Everything you need to stay connected.</h2><p>Inspired by the best ISP experiences, but built around Krishnanagar Net's local service and identity.</p></div>
+<div class="services">
+<div class="service"><div class="service-icon">⚡</div><h3>High-Speed Internet</h3><p>Fast connectivity for streaming, browsing, downloads, online classes and everyday use.</p></div>
+<div class="service"><div class="service-icon">🛡</div><h3>Stable & Secure</h3><p>Dependable internet for the devices and people that matter to you.</p></div>
+<div class="service"><div class="service-icon">∞</div><h3>Unlimited Browsing</h3><p>Stay connected for study, work, entertainment and communication.</p></div>
+<div class="service"><div class="service-icon">🏠</div><h3>Home Internet</h3><p>A connection built for families, students, entertainment and work from home.</p></div>
+<div class="service"><div class="service-icon">🏢</div><h3>Business Internet</h3><p>Reliable connectivity for businesses and teams that depend on the internet.</p></div>
+<div class="service"><div class="service-icon">🎓</div><h3>Institute Internet</h3><p>Connectivity for classrooms, labs, offices and digital learning environments.</p></div>
+</div>
+</div>
+</section>
+
+<section class="plans-section" id="plans">
+<div class="container">
+<div class="section-head">
+<h2>Choose your speed. Choose your plan.</h2>
+<p>Every package is organized by speed, so you can compare billing periods easily.</p>
+</div>
+
+<div class="filters" id="speedFilters">
+<button class="filter active" data-speed="all">All Speeds</button>
+<button class="filter" data-speed="60">60 Mbps</button>
+<button class="filter" data-speed="100">100 Mbps</button>
+<button class="filter" data-speed="130">130 Mbps</button>
+</div>
+
+<div id="speedGroups">
+
+<div class="speed-group" data-speed-group="60" style="margin-bottom:44px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:15px;margin-bottom:18px;flex-wrap:wrap">
+<div><div style="font-size:12px;color:#087b43;font-weight:950;letter-spacing:.7px">SPEED CATEGORY</div><h3 style="font-size:31px;line-height:1;color:var(--navy);margin-top:5px">60 Mbps Plans</h3></div>
+<span style="background:#eaf4ff;color:var(--blue);padding:7px 11px;border-radius:999px;font-size:12px;font-weight:900">Everyday Connectivity</span>
+</div>
+<div class="plan-grid">
+<article class="plan"><h3>1 Month</h3><div class="speed-number">60 <small>Mbps</small></div><div class="plan-price">Rs. 800 <small>/ month</small></div><ul><li>High-speed internet</li><li>Unlimited browsing</li><li>Reliable connection</li><li>Customer support</li></ul><button class="btn outline" onclick="openOrder('60 Mbps — 1 Month — Rs. 800')">Get This Plan</button></article>
+<article class="plan"><h3>3 Months</h3><div class="speed-number">60 <small>Mbps</small></div><div class="plan-price">Rs. 2,000 <small>/ 3 months</small></div><ul><li>High-speed internet</li><li>Unlimited browsing</li><li>Reliable connection</li><li>Customer support</li></ul><button class="btn outline" onclick="openOrder('60 Mbps — 3 Months — Rs. 2,000')">Get This Plan</button></article>
+<article class="plan"><h3>1 Year</h3><div class="speed-number">60 <small>Mbps</small></div><div class="plan-price">Rs. 7,000 <small>/ year</small></div><ul><li>High-speed internet</li><li>Unlimited browsing</li><li>Reliable connection</li><li>Customer support</li></ul><button class="btn outline" onclick="openOrder('60 Mbps — 1 Year — Rs. 7,000')">Get This Plan</button></article>
+</div></div>
+
+<div class="speed-group" data-speed-group="100" style="margin-bottom:44px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:15px;margin-bottom:18px;flex-wrap:wrap">
+<div><div style="font-size:12px;color:#087b43;font-weight:950;letter-spacing:.7px">SPEED CATEGORY</div><h3 style="font-size:31px;line-height:1;color:var(--navy);margin-top:5px">100 Mbps Plans</h3></div>
+<span style="background:#e7f8ef;color:#087b43;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:900">New Connection Offer</span>
+</div>
+<div class="plan-grid">
+<article class="plan featured"><span class="recommended">NEW CONNECTION</span><h3>3 Months</h3><div class="speed-number">100 <small>Mbps</small></div><div class="plan-price">Rs. 3,500 <small>/ 3 months</small></div><ul><li>Free installation</li><li>No hidden charges</li><li>Unlimited browsing</li><li>24/7 support</li><li>Stable & secure</li></ul><button class="btn green" onclick="openOrder('100 Mbps — 3 Months — Rs. 3,500')">Get This Plan</button></article>
+</div></div>
+
+<div class="speed-group" data-speed-group="130">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:15px;margin-bottom:18px;flex-wrap:wrap">
+<div><div style="font-size:12px;color:#087b43;font-weight:950;letter-spacing:.7px">SPEED CATEGORY</div><h3 style="font-size:31px;line-height:1;color:var(--navy);margin-top:5px">130 Mbps Plans</h3></div>
+<span style="background:#fff2df;color:#9a5a00;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:900">Premium Speed</span>
+</div>
+<div class="plan-grid">
+<article class="plan"><h3>1 Month</h3><div class="speed-number">130 <small>Mbps</small></div><div class="plan-price">Rs. 1,100 <small>/ month</small></div><ul><li>High-speed internet</li><li>Unlimited browsing</li><li>Reliable connection</li><li>Customer support</li></ul><button class="btn outline" onclick="openOrder('130 Mbps — 1 Month — Rs. 1,100')">Get This Plan</button></article>
+<article class="plan"><h3>3 Months</h3><div class="speed-number">130 <small>Mbps</small></div><div class="plan-price">Rs. 3,100 <small>/ 3 months</small></div><ul><li>High-speed internet</li><li>Unlimited browsing</li><li>Reliable connection</li><li>Customer support</li></ul><button class="btn outline" onclick="openOrder('130 Mbps — 3 Months — Rs. 3,100')">Get This Plan</button></article>
+<article class="plan"><h3>6 Months</h3><div class="speed-number">130 <small>Mbps</small></div><div class="plan-price">Rs. 6,000 <small>/ 6 months</small></div><ul><li>High-speed internet</li><li>Unlimited browsing</li><li>Reliable connection</li><li>Customer support</li></ul><button class="btn outline" onclick="openOrder('130 Mbps — 6 Months — Rs. 6,000')">Get This Plan</button></article>
+<article class="plan"><h3>1 Year</h3><div class="speed-number">130 <small>Mbps</small></div><div class="plan-price">Rs. 10,000 <small>/ year</small></div><ul><li>High-speed internet</li><li>Unlimited browsing</li><li>Reliable connection</li><li>Customer support</li></ul><button class="btn outline" onclick="openOrder('130 Mbps — 1 Year — Rs. 10,000')">Get This Plan</button></article>
+</div></div>
+</div>
+
+<div class="custom"><div><h3>Need a business or institute connection?</h3><p>Tell us what you need and our team can discuss a suitable connection.</p></div><a class="btn" href="#contact">Talk to Us →</a></div>
+</div>
+</section>
+
+
+
+<section class="why" id="why">
+<div class="container">
+<div class="section-head"><h2>Your time matters. Your trust matters.</h2><p>We value your time and your trust. That’s why we work every day to deliver reliable internet and fast, dependable service when you need it.</p></div>
+<div class="why-grid"><div class="quote"><p>“Connecting You to a World of Possibilities.”</p><b>— Krishnanagar Net Pvt Ltd</b><p style="font-size:14px;color:var(--muted);font-weight:500;margin-top:15px">Fast. Reliable. Local. Always With You.</p></div>
+<div class="stats-grid"><div class="metric"><strong>100 Mbps</strong><span>Featured new-connection speed</span></div><div class="metric"><strong>24/7</strong><span>Support-focused service</span></div><div class="metric"><strong>3 mo</strong><span>Featured offer period</span></div><div class="metric"><strong>3</strong><span>Customer groups: Home · Business · Institute</span></div></div></div>
+</div>
+</section>
+
+
+<section id="officeLocation">
+<div class="container">
+<div class="section-head">
+<h2>Our office location.</h2>
+<p>Our office location is pinned below. Customers can open the location in Google Maps and get directions instantly.</p>
+</div>
+<div class="office-box">
+<div class="office-grid">
+<div class="office-copy">
+<div class="eyebrow">📍 OUR OFFICE</div>
+<h3>Find our office</h3>
+<p>The office location has been set from the Google Maps location provided by Krishnanagar Net Pvt Ltd. It is fixed for customers, so the marker cannot be moved accidentally.</p>
+<div class="office-status" id="officeStatus">✓ Office location is set from your Google Maps pin.</div>
+<div class="office-actions">
+<a class="btn green" id="officeDirections" href="https://maps.app.goo.gl/cZzaXbVhwxGaT4BG7" target="_blank" rel="noopener">Open in Google Maps →</a>
+</div>
+<div class="office-coords" id="officeCoords">Office pin: 27.501379, 82.792401</div>
+</div>
+<div class="office-map"><div id="officeMap"></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="coverageDirectory" class="coverage-directory">
+<div class="container">
+<div class="section-head">
+<h2>Available in More than 10+ Areas and Still Growing</h2>
+<p>Search your district or area to see whether it is currently listed in our service coverage.</p>
+</div>
+
+<div class="coverage-search-card">
+<div class="coverage-search">
+<input id="directoryAreaInput" type="search" placeholder="Search District or Area" aria-label="Search district or area">
+<button class="btn primary" type="button" onclick="checkDirectoryCoverage()">Check</button>
+</div>
+<div id="directoryResult" class="directory-result" aria-live="polite"></div>
+
+<div class="directory-layout">
+<div class="directory-map-wrap">
+<div id="coverageDirectoryMap"></div>
+<div class="map-caption">Service coverage overview · © OpenStreetMap contributors</div>
+</div>
+
+<div class="area-directory">
+<div class="directory-title">
+<div><strong>Our current service areas</strong><span>New connections</span></div>
+<span id="areaCount">10 Areas</span>
+</div>
+<div class="area-list" id="areaList">
+<button class="area-pill" type="button" data-area="Krishnanagar" onclick="selectDirectoryArea('Krishnanagar')">Krishnanagar</button>
+<button class="area-pill" type="button" data-area="Ganeshpur" onclick="selectDirectoryArea('Ganeshpur')">Ganeshpur</button>
+<button class="area-pill" type="button" data-area="Khaira" onclick="selectDirectoryArea('Khaira')">Khaira</button>
+<button class="area-pill" type="button" data-area="Dalpur" onclick="selectDirectoryArea('Dalpur')">Dalpur</button>
+<button class="area-pill" type="button" data-area="Dattpur" onclick="selectDirectoryArea('Dattpur')">Dattpur</button>
+<button class="area-pill" type="button" data-area="Dabara" onclick="selectDirectoryArea('Dabara')">Dabara</button>
+<button class="area-pill" type="button" data-area="Bahadurgunj" onclick="selectDirectoryArea('Bahadurgunj')">Bahadurgunj</button>
+<button class="area-pill" type="button" data-area="Shivanagar" onclick="selectDirectoryArea('Shivanagar')">Shivanagar</button>
+<button class="area-pill" type="button" data-area="Gurchiwa" onclick="selectDirectoryArea('Gurchiwa')">Gurchiwa</button>
+<button class="area-pill" type="button" data-area="Jhingha" onclick="selectDirectoryArea('Jhingha')">Jhingha</button>
+</div>
+<div class="directory-note">Coverage is updated as our network expands. Call <a href="tel:+9779867400888">9867400888</a> to confirm your exact location.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="container">
+<div class="section-head"><h2>Ready to get connected?</h2><p>Start your new journey with Krishnanagar Net Pvt Ltd.</p></div>
+<div class="contact-grid">
+<div class="contact-card"><h3>Contact details</h3>
+<div class="contact-row"><span>📞</span><div><b>9867400888</b><span>New connection & general enquiries</span></div></div>
+<div class="contact-row"><span>📞</span><div><b>9847014781</b><span>Customer enquiries</span></div></div>
+<div class="contact-row"><span>💬</span><div><b>WhatsApp: 9867400888</b><span>Connection requests & support</span></div></div>
+<div class="contact-row"><span>✉️</span><div><b>krishnagarnetpvtltd@gmail.com</b><span>Email support</span></div></div>
+<div class="contact-row"><span>📍</span><div><b>Krishnanagar Area</b><span>New connections currently offered in Krishnanagar, Ganeshpur, Khaira, Dalpur, Dattpur, Dabara, Bahadurgunj, Shivanagar, Gurchiwa and Jhingha.</span></div></div>
+</div>
+<div class="contact-card"><h3>New connection request</h3><p style="color:#c7d7ef;font-size:13px;margin:0 0 9px">For new customers only. Already a customer? Use the <button type="button" onclick="openGeneralExisting()" style="border:0;background:none;color:#fff;text-decoration:underline;font-weight:800;cursor:pointer;padding:0">existing-customer service form</button>.</p>
+<form id="leadForm" onsubmit="submitLead(event)">
+<input id="leadName" required placeholder="Full name">
+<input id="leadPhone" required placeholder="Phone number">
+<input id="leadArea" required placeholder="Area / landmark">
+<div class="location-box">
+<div style="font-size:12px;font-weight:900;color:var(--navy);margin-bottom:7px">📍 Location</div>
+<div style="font-size:11px;color:var(--muted);margin-bottom:7px">Your location is only included when you send the request.</div><div class="location-actions"><button type="button" class="location-btn" onclick="getCurrentLocation('lead')">Use My Current Location</button><button type="button" class="location-btn" onclick="clearLocation('lead')">Clear</button></div>
+<div id="leadLocationStatus" class="location-status">Location is optional. Your browser will ask for permission.</div>
+<input type="hidden" id="leadLatitude"><input type="hidden" id="leadLongitude">
+</div>
+<select id="leadPlan">
+<option>100 Mbps — New Connection</option>
+<option>130 Mbps — 1 Month — Rs. 1,100</option>
+<option>130 Mbps — 3 Months — Rs. 3,100</option>
+<option>130 Mbps — 6 Months — Rs. 6,000</option>
+<option>130 Mbps — Annual — Rs. 10,000</option>
+<option>60 Mbps Monthly</option>
+<option>60 Mbps — 3 Months</option>
+<option>60 Mbps — Annual</option>
+<option>Business / Institute</option>
+</select>
+<textarea id="leadMessage" placeholder="Anything else you'd like to tell us?"></textarea>
+<button class="btn green" type="submit">Send Request</button>
+<div class="form-message" id="formMessage"></div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<div class="floating"><a class="float-btn call" href="tel:+9779867400888" aria-label="Call">☎</a><button class="float-btn mail" type="button" onclick="quickWhatsApp()" aria-label="WhatsApp">✆</button><a class="float-btn mail" style="background:#0b4ca8" href="mailto:krishnagarnetpvtltd@gmail.com" aria-label="Email">✉</a></div>
+
+<div class="modal" id="orderModal" onclick="if(event.target===this)closeOrder()">
+<div class="modal-box">
+<button class="close" onclick="closeOrder()">×</button>
+<h3 id="orderTitle">Get connected</h3>
+<p id="orderSubtitle">Choose the option that matches your situation.</p>
+
+<div id="customerTypeStep">
+<div class="customer-choice">
+<button type="button" class="choice-card" onclick="chooseCustomerType('new')">
+<strong>🆕 New Connection</strong>
+<span>I don't currently use Krishnanagar Net.</span>
+</button>
+<button type="button" class="choice-card" onclick="chooseCustomerType('existing')">
+<strong>👤 Existing Customer</strong>
+<span>I already have a Krishnanagar Net connection.</span>
+</button>
+</div>
+</div>
+
+<div id="newCustomerStep" style="display:none">
+<p>Plan selected: <b id="selectedPlan"></b></p>
+<form onsubmit="submitOrder(event)">
+<input id="orderName" required placeholder="Full name">
+<input id="orderPhone" required placeholder="Phone number">
+<input id="orderArea" required placeholder="Area / landmark">
+<div class="location-box">
+<div style="font-size:12px;font-weight:900;color:var(--navy);margin-bottom:7px">📍 Location</div>
+<div style="font-size:11px;color:var(--muted);margin-bottom:7px">Your location is only included when you send the request.</div><div class="location-actions"><button type="button" class="location-btn" onclick="getCurrentLocation('new')">Use My Current Location</button><button type="button" class="location-btn" onclick="clearLocation('new')">Clear</button></div>
+<div id="newLocationStatus" class="location-status">Location is optional. Your browser will ask for permission.</div>
+<input type="hidden" id="newLatitude"><input type="hidden" id="newLongitude">
+</div>
+<button class="btn green" type="submit">Continue to WhatsApp</button>
+<button class="btn outline" style="width:100%;margin-top:8px" type="button" onclick="backToCustomerType()">← Back</button>
+</form>
+</div>
+
+<div id="existingCustomerStep" style="display:none">
+<form onsubmit="submitExistingCustomer(event)">
+<select id="existingRequestType" required>
+<option value="">What do you need?</option>
+<option>Renew my internet plan</option>
+<option>Upgrade my internet speed</option>
+<option>Downgrade my internet speed</option>
+<option>Report a connection problem</option>
+<option>Request technical support</option>
+<option>Ask about my current plan</option>
+<option>Other enquiry</option>
+</select>
+<input id="existingName" required placeholder="Full name / customer name">
+<input id="existingPhone" required placeholder="Registered phone number">
+<input id="existingCustomerId" placeholder="Customer ID (optional)">
+<input id="existingArea" required placeholder="Area / landmark">
+<div class="location-box">
+<div style="font-size:12px;font-weight:900;color:var(--navy);margin-bottom:7px">📍 Location</div>
+<div style="font-size:11px;color:var(--muted);margin-bottom:7px">Your location is only included when you send the request.</div><div class="location-actions"><button type="button" class="location-btn" onclick="getCurrentLocation('existing')">Use My Current Location</button><button type="button" class="location-btn" onclick="clearLocation('existing')">Clear</button></div>
+<div id="existingLocationStatus" class="location-status">Location is optional. Your browser will ask for permission.</div>
+<input type="hidden" id="existingLatitude"><input type="hidden" id="existingLongitude">
+</div>
+<textarea id="existingMessage" placeholder="Describe your request"></textarea>
+<button class="btn green" type="submit">Continue to WhatsApp</button>
+<button class="btn outline" style="width:100%;margin-top:8px" type="button" onclick="backToCustomerType()">← Back</button>
+</form>
+</div>
+</div></div>
+
+<footer><div class="container footer"><div><b>Krishnanagar Net Pvt Ltd</b><br>Connecting You to a World of Possibilities.</div><div>© <span id="year"></span> Krishnanagar Net Pvt Ltd · All rights reserved.</div></div></footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+const COMPANY_EMAIL="krishnagarnetpvtltd@gmail.com";
+const WHATSAPP="9779867400888";
+function toggleNav(){document.getElementById("navlinks").classList.toggle("mobile-open")}
+document.querySelectorAll('#navlinks a[href^="#"]').forEach(a=>a.addEventListener("click",()=>document.getElementById("navlinks").classList.remove("mobile-open")));
+document.querySelectorAll("#speedFilters .filter").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll("#speedFilters .filter").forEach(x=>x.classList.remove("active"));
+ btn.classList.add("active");
+ const speed=btn.dataset.speed;
+ document.querySelectorAll(".speed-group").forEach(group=>{
+   group.style.display=(speed==="all"||group.dataset.speedGroup===speed)?"block":"none";
+ });
+}));
+function openOrder(plan){
+ document.getElementById("selectedPlan").textContent=plan;
+ document.getElementById("orderModal").classList.add("show");
+ document.getElementById("customerTypeStep").style.display="block";
+ document.getElementById("newCustomerStep").style.display="none";
+ document.getElementById("existingCustomerStep").style.display="none";
+ document.getElementById("orderTitle").textContent="How can we help?";
+ document.getElementById("orderSubtitle").textContent="Choose the option that matches your situation.";
+}
+function closeOrder(){document.getElementById("orderModal").classList.remove("show")}
+function chooseCustomerType(type){
+ document.getElementById("customerTypeStep").style.display="none";
+ if(type==="new"){
+   document.getElementById("newCustomerStep").style.display="block";
+   document.getElementById("existingCustomerStep").style.display="none";
+   document.getElementById("orderTitle").textContent="New Connection";
+   document.getElementById("orderSubtitle").textContent="Tell us where you'd like your new connection.";
+   setTimeout(()=>document.getElementById("orderName").focus(),60);
+ }else{
+   document.getElementById("newCustomerStep").style.display="none";
+   document.getElementById("existingCustomerStep").style.display="block";
+   document.getElementById("orderTitle").textContent="Existing Customer";
+   document.getElementById("orderSubtitle").textContent="Choose a service and tell us how we can help.";
+   setTimeout(()=>document.getElementById("existingRequestType").focus(),60);
+ }
+}
+function backToCustomerType(){
+ document.getElementById("customerTypeStep").style.display="block";
+ document.getElementById("newCustomerStep").style.display="none";
+ document.getElementById("existingCustomerStep").style.display="none";
+ document.getElementById("orderTitle").textContent="How can we help?";
+ document.getElementById("orderSubtitle").textContent="Choose the option that matches your situation.";
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeOrder()});
+
+function getCurrentLocation(type){
+ const prefix=type;
+ const status=document.getElementById(prefix+"LocationStatus");
+ const lat=document.getElementById(prefix+"Latitude");
+ const lng=document.getElementById(prefix+"Longitude");
+ if(!status||!lat||!lng){return;}
+ if(!navigator.geolocation){
+   status.className="location-status error";
+   status.textContent="Location services are not supported by this browser.";
+   return;
+ }
+ status.className="location-status";
+ status.textContent="Requesting your location…";
+ navigator.geolocation.getCurrentPosition(
+  pos=>{
+   const latitude=pos.coords.latitude.toFixed(6);
+   const longitude=pos.coords.longitude.toFixed(6);
+   lat.value=latitude; lng.value=longitude;
+   status.className="location-status success";
+   status.textContent=`✓ Location captured: ${latitude}, ${longitude}`;
+  },
+  err=>{
+   status.className="location-status error";
+   if(err.code===1) status.textContent="Location permission was denied. You can enter the area manually.";
+   else if(err.code===2) status.textContent="Your location could not be determined. Please try again.";
+   else status.textContent="Location request timed out. Please try again.";
+  },
+  {enableHighAccuracy:true,timeout:10000,maximumAge:60000}
+ );
+}
+function clearLocation(type){
+ const status=document.getElementById(type+"LocationStatus");
+ const lat=document.getElementById(type+"Latitude");
+ const lng=document.getElementById(type+"Longitude");
+ if(!status||!lat||!lng)return;
+ lat.value=""; lng.value="";
+ status.className="location-status";
+ status.textContent="Location cleared. You can enter the area manually.";
+}
+function saveRequest(data){
+ const key="krishnanagar_net_requests";
+ const list=JSON.parse(localStorage.getItem(key)||"[]");
+ list.push({...data,submittedAt:new Date().toISOString()});
+ localStorage.setItem(key,JSON.stringify(list));
+}
+function openWhatsApp(data){
+ const nl=String.fromCharCode(10);
+ const heading=data.customerType==="existing" ? "Existing customer service request" : "New website connection request";
+ const lines=[heading,"",`Name: ${data.name||"-"}`,`Phone: ${data.phone||"-"}`,`Area: ${data.area||"-"}`];
+ if(data.customerType==="new"){
+   lines.push(`Plan: ${data.plan||"-"}`);
+ }else{
+   lines.push(`Request: ${data.requestType||"-"}`,`Customer ID: ${data.customerId||"Not provided"}`);
+ }
+ if(data.latitude && data.longitude){
+   lines.push(`Current Location: ${data.latitude}, ${data.longitude}`);
+   lines.push(`Map: https://maps.google.com/?q=${data.latitude},${data.longitude}`);
+ }
+ if(data.message)lines.push(`Message: ${data.message}`);
+ const waUrl=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join(nl))}`;
+ const popup=window.open(waUrl,"_blank","noopener,noreferrer");
+ if(!popup){location.href=waUrl;}
+}
+function submitOrder(e){
+ e.preventDefault();
+ const data={
+  customerType:"new",
+  name:document.getElementById("orderName").value.trim(),
+  phone:document.getElementById("orderPhone").value.trim(),
+  area:document.getElementById("orderArea").value.trim(),
+  plan:document.getElementById("selectedPlan").textContent,
+  latitude:document.getElementById("newLatitude").value,
+  longitude:document.getElementById("newLongitude").value,
+  message:""
+ };
+ if(!data.name||!data.phone||!data.area)return;
+ saveRequest(data);closeOrder();openWhatsApp(data);
+}
+function submitExistingCustomer(e){
+ e.preventDefault();
+ const data={
+  customerType:"existing",
+  name:document.getElementById("existingName").value.trim(),
+  phone:document.getElementById("existingPhone").value.trim(),
+  area:document.getElementById("existingArea").value.trim(),
+  requestType:document.getElementById("existingRequestType").value,
+  customerId:document.getElementById("existingCustomerId").value.trim(),
+  latitude:document.getElementById("existingLatitude").value,
+  longitude:document.getElementById("existingLongitude").value,
+  message:document.getElementById("existingMessage").value.trim(),
+  plan:"Existing customer service"
+ };
+ if(!data.name||!data.phone||!data.area||!data.requestType)return;
+ saveRequest(data);closeOrder();openWhatsApp(data);
+}
+function submitLead(e){
+ e.preventDefault();
+ const data={
+  customerType:"new",
+  name:document.getElementById("leadName").value.trim(),
+  phone:document.getElementById("leadPhone").value.trim(),
+  area:document.getElementById("leadArea").value.trim(),
+  plan:document.getElementById("leadPlan").value,
+  latitude:document.getElementById("leadLatitude").value,
+  longitude:document.getElementById("leadLongitude").value,
+  message:document.getElementById("leadMessage").value.trim()
+ };
+ if(!data.name||!data.phone||!data.area)return;
+ saveRequest(data);
+ const msg=document.getElementById("formMessage");
+ msg.style.display="block";
+ msg.textContent="Request saved. Opening WhatsApp so you can send it directly to Krishnanagar Net.";
+ openWhatsApp(data);
+}
+
+function openGeneralExisting(){
+ document.getElementById("selectedPlan").textContent="Existing customer service";
+ document.getElementById("orderModal").classList.add("show");
+ chooseCustomerType("existing");
+}
+function selectArea(area){
+ document.getElementById("areaInput").value=area;
+ checkCoverage();
+}
+
+let officeMap=null, officeMarker=null;
+const DEFAULT_OFFICE_LAT=27.5013786;
+const DEFAULT_OFFICE_LNG=82.7924008;
+const DEFAULT_OFFICE_MAP_LINK="https://maps.app.goo.gl/cZzaXbVhwxGaT4BG7";
+
+
+let coverageDirectoryMap=null;
+
+const coverageAreas = [
+ {name:"Krishnanagar",aliases:["krishnanagar","krishna nagar"]},
+ {name:"Ganeshpur",aliases:["ganeshpur"]},
+ {name:"Khaira",aliases:["khaira"]},
+ {name:"Dalpur",aliases:["dalpur"]},
+ {name:"Dattpur",aliases:["dattpur"]},
+ {name:"Dabara",aliases:["dabara"]},
+ {name:"Bahadurgunj",aliases:["bahadurgunj","bahadur gunj"]},
+ {name:"Shivanagar",aliases:["shivanagar","shiv nagar"]},
+ {name:"Gurchiwa",aliases:["gurchiwa"]},
+ {name:"Jhingha",aliases:["jhingha"]}
+];
+
+
+
+let cloudSpeedTest=null;
+let speedTestStopped=false;
+let speedTestBusy=false;
+
+function speedSetStatus(text,kind=""){
+ const el=document.getElementById("speedTestStatus");
+ if(!el)return;
+ el.className="speed-test-status"+(kind?" "+kind:"");
+ el.textContent=text;
+}
+function speedSetProgress(percent,phase){
+ const bar=document.getElementById("speedProgressBar");
+ const ph=document.getElementById("speedPhase");
+ if(bar)bar.style.width=Math.max(0,Math.min(100,percent))+"%";
+ if(ph)ph.textContent=phase;
+}
+function speedRenderValue(id,bps){
+ const el=document.getElementById(id);
+ if(!el)return;
+ el.textContent=(typeof bps==="number"&&isFinite(bps))?(bps/1000000).toFixed(1):"—";
+}
+function speedRenderLatency(id,ms){
+ const el=document.getElementById(id);
+ if(!el)return;
+ el.textContent=(typeof ms==="number"&&isFinite(ms))?Math.round(ms):"—";
+}
+function speedResetUI(){
+ document.getElementById("speedDownload").textContent="—";
+ document.getElementById("speedUpload").textContent="—";
+ document.getElementById("speedPing").textContent="—";
+ document.getElementById("speedProgressBar").style.width="0%";
+ document.getElementById("speedPhase").textContent="Ready";
+ document.getElementById("speedTimer").textContent="0.0s";
+}
+function speedUpdateFromResults(results,type){
+ const down=results.getDownloadBandwidth?.();
+ const up=results.getUploadBandwidth?.();
+ const ping=results.getUnloadedLatency?.();
+
+ speedRenderValue("speedDownload",down);
+ speedRenderValue("speedUpload",up);
+ speedRenderLatency("speedPing",ping);
+
+ if(type==="latency"){
+   speedSetProgress(18,"Measuring latency…");
+ }else if(type==="download"){
+   speedSetProgress(Math.min(62,28+(down?25:8)),"Measuring download speed…");
+ }else if(type==="upload"){
+   speedSetProgress(Math.min(88,65+(up?18:8)),"Measuring upload speed…");
+ }
+}
+function speedSetTimerStart(){
+ const started=performance.now();
+ const timer=document.getElementById("speedTimer");
+ const tick=()=>{
+   if(!speedTestBusy)return;
+   timer.textContent=((performance.now()-started)/1000).toFixed(1)+"s";
+   requestAnimationFrame(tick);
+ };
+ requestAnimationFrame(tick);
+}
+
+async function startSpeedTest(){
+ if(speedTestBusy)return;
+
+ speedTestStopped=false;
+ speedTestBusy=true;
+ speedResetUI();
+
+ const startBtn=document.getElementById("speedTestStart");
+ const stopBtn=document.getElementById("speedStop");
+ startBtn.disabled=true;
+ startBtn.textContent="Testing…";
+ stopBtn.style.display="inline-flex";
+ speedSetStatus("Connecting to the speed-test service…","running");
+ speedSetProgress(3,"Connecting…");
+ speedSetTimerStart();
+
+ try{
+   // A fresh engine on each run gives customers a clean test every time.
+   const {default:SpeedTest}=await import("https://cdn.jsdelivr.net/npm/@cloudflare/speedtest@1.14.0/+esm");
+
+   cloudSpeedTest=new SpeedTest({
+     autoStart:false,
+     // Keep the website test focused on the three user-visible metrics.
+     // Packet loss is intentionally omitted so the public deprecated TURN path
+     // is not used by this site.
+     measurements:[
+       {type:"latency",numPackets:10},
+       {type:"download",bytes:1e5,count:4,bypassMinDuration:true},
+       {type:"download",bytes:1e6,count:6},
+       {type:"download",bytes:1e7,count:4},
+       {type:"download",bytes:2.5e7,count:2},
+       {type:"upload",bytes:1e5,count:4,bypassMinDuration:true},
+       {type:"upload",bytes:1e6,count:6},
+       {type:"upload",bytes:1e7,count:4},
+       {type:"upload",bytes:2.5e7,count:2}
+     ],
+     measureDownloadLoadedLatency:true,
+     measureUploadLoadedLatency:true
+   });
+
+   cloudSpeedTest.onRunningChange=running=>{
+     if(running){
+       speedSetStatus("Testing your connection…","running");
+     }
+   };
+
+   cloudSpeedTest.onResultsChange=({type})=>{
+     if(cloudSpeedTest && cloudSpeedTest.results){
+       speedUpdateFromResults(cloudSpeedTest.results,type);
+     }
+   };
+
+   cloudSpeedTest.onFinish=results=>{
+     speedUpdateFromResults(results,"finish");
+     speedSetProgress(100,"Complete");
+     speedSetStatus("✓ Speed test complete. Your measured result is shown above.","success");
+
+     // Show the measured latency again from the final result.
+     speedRenderLatency("speedPing",results.getUnloadedLatency?.());
+   };
+
+   cloudSpeedTest.onError=error=>{
+     console.error("Speed test error:",error);
+     speedSetStatus("The speed test could not complete. Please try again. If it keeps failing, use the full speed-test button below.","error");
+     speedSetProgress(0,"Unable to complete");
+   };
+
+   await cloudSpeedTest.play();
+ }catch(error){
+   console.error("Speed test startup error:",error);
+   speedSetStatus("The speed test service could not be loaded. Please check your connection and try again.","error");
+   speedSetProgress(0,"Unable to start");
+ }finally{
+   speedTestBusy=false;
+   startBtn.disabled=false;
+   startBtn.textContent="Start Speed Test";
+   stopBtn.style.display="none";
+ }
+}
+
+function stopSpeedTest(){
+ if(cloudSpeedTest && cloudSpeedTest.isRunning){
+   speedTestStopped=true;
+   cloudSpeedTest.pause();
+   speedSetStatus("Test paused. Press Start Speed Test to run a fresh measurement.","error");
+   speedSetProgress(0,"Paused");
+ }
+}
+
+function openOfficialSpeedTest(){
+ window.open("https://speed.cloudflare.com/","_blank","noopener,noreferrer");
+}
+
+function initCoverageDirectoryMap(){
+ if(typeof L==="undefined" || !document.getElementById("coverageDirectoryMap")) return;
+ coverageDirectoryMap=L.map("coverageDirectoryMap",{scrollWheelZoom:true,zoomControl:true}).setView([27.7,85.3],7);
+ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+   maxZoom:19,
+   attribution:"© OpenStreetMap contributors"
+ }).addTo(coverageDirectoryMap);
+
+ // Office pin from the selected office location. Other area locations are deliberately
+ // not given fabricated coordinates; the directory remains searchable and editable.
+ const saved=JSON.parse(localStorage.getItem("krishnanagar_office_location")||"null");
+ const lat=saved?.lat||DEFAULT_OFFICE_LAT;
+ const lng=saved?.lng||DEFAULT_OFFICE_LNG;
+ const office=L.marker([lat,lng]).addTo(coverageDirectoryMap);
+ office.bindPopup("<b>Krishnanagar Net Pvt Ltd</b><br>Office location");
+}
+
+function selectDirectoryArea(area){
+ document.getElementById("directoryAreaInput").value=area;
+ document.querySelectorAll(".area-pill").forEach(btn=>btn.classList.toggle("selected",btn.dataset.area===area));
+ checkDirectoryCoverage();
+}
+
+function checkDirectoryCoverage(){
+ const value=document.getElementById("directoryAreaInput").value.trim().toLowerCase();
+ const result=document.getElementById("directoryResult");
+ document.querySelectorAll(".area-pill").forEach(btn=>btn.classList.remove("selected"));
+ if(!value){
+   result.className="directory-result warn";
+   result.textContent="Please enter a district or area.";
+   return;
+ }
+ const found=coverageAreas.find(a=>a.aliases.some(alias=>value.includes(alias)));
+ if(found){
+   const selected=document.querySelector(`.area-pill[data-area="${found.name}"]`);
+   if(selected)selected.classList.add("selected");
+   result.className="directory-result ok";
+   result.textContent=`✓ ${found.name} is listed in our current service coverage. Call 9867400888 to confirm exact installation availability.`;
+ }else{
+   result.className="directory-result warn";
+   result.textContent="This area is not currently listed. Call 9867400888 and our team can check availability.";
+ }
+}
+
+function initOfficeMap(){
+ if(typeof L==="undefined" || document.getElementById("officeMap")===null) return;
+ officeMap=L.map("officeMap",{scrollWheelZoom:false}).setView([DEFAULT_OFFICE_LAT,DEFAULT_OFFICE_LNG],16);
+ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap contributors"}).addTo(officeMap);
+ officeMarker=L.marker([DEFAULT_OFFICE_LAT,DEFAULT_OFFICE_LNG],{keyboard:true}).addTo(officeMap);
+ officeMarker.bindPopup("<b>Krishnanagar Net Pvt Ltd</b><br>Office location").openPopup();
+ setTimeout(()=>officeMap.invalidateSize(),250);
+}
+
+function checkCoverage(){
+ const v=document.getElementById("areaInput").value.trim().toLowerCase();
+ const r=document.getElementById("coverageResult");
+ if(!v){
+   r.className="result no";
+   r.textContent="Please enter your area.";
+   return;
+ }
+ const matches=[
+  ["krishnanagar","Krishnanagar"],
+  ["krishna nagar","Krishnanagar"],
+  ["ganeshpur","Ganeshpur"],
+  ["khaira","Khaira"],
+  ["dalpur","Dalpur"],
+  ["dattpur","Dattpur"],
+  ["dabara","Dabara"],
+  ["bahadurgunj","Bahadurgunj"],
+  ["shivanagar","Shivanagar"],
+  ["shiv nagar","Shivanagar"],
+  ["gurchiwa","Gurchiwa"],
+  ["jhingha","Jhingha"]
+ ];
+ const match=matches.find(x=>v.includes(x[0]));
+ if(match){
+   r.className="result ok";
+   r.textContent=`✓ ${match[1]} is within our listed service area. Call 9867400888 to confirm your exact location and installation availability.`;
+ }else{
+   r.className="result no";
+   r.textContent="This area is not in our listed service area yet. Call 9867400888 to ask about availability.";
+ }
+}
+function quickWhatsApp(){openWhatsApp({plan:"General enquiry",message:"Hello Krishnanagar Net Pvt Ltd, I would like to know more about your internet service."})}
+document.getElementById("year").textContent=new Date().getFullYear();
+initOfficeMap();
+initCoverageDirectoryMap();
+</script>
+</body></html>
