@@ -6,6 +6,7 @@ import android.os.Build;
 
 public class ReminderReceiver extends BroadcastReceiver {
     @Override public void onReceive(Context context, Intent intent) {
+        if (!context.getSharedPreferences("kn_prefs", Context.MODE_PRIVATE).getBoolean("staffActive", false)) return;
         if (Build.VERSION.SDK_INT >= 33 && context.checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != android.content.pm.PackageManager.PERMISSION_GRANTED) return;
         MainActivity.Db db = new MainActivity.Db(context);
         if (db.getOpenTickets().isEmpty()) return;
