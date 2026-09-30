@@ -32,6 +32,10 @@ jobs:
           echo "STORE_PASS=$STORE_PASS" >> "$GITHUB_ENV"
           keytool -genkeypair -v             -keystore ci-release.jks             -storepass "$STORE_PASS"             -keypass "$STORE_PASS"             -alias krishnanagar             -keyalg RSA             -keysize 2048             -startdate "2000/01/01 00:00:00"             -validity 36500             -dname "CN=Krishnanagar Net Pvt Ltd, OU=Mobile, O=Krishnanagar Net Pvt Ltd, L=Krishnanagar, ST=Lumbini, C=NP"
 
+      - name: Run Android lint
+        working-directory: android-app
+        run: gradle lintRelease --no-daemon
+
       - name: Build signed release APK
         working-directory: android-app
         env:
@@ -54,6 +58,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: krishnanagar-net-android-apk-v3.0.4
+          name: krishnanagar-net-android-apk-v3.0.4-lint
           path: android-app/app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
