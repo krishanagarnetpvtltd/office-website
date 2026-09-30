@@ -267,7 +267,7 @@ public class MainActivity extends Activity {
     TextView label(String s){TextView t=text(s,14,NAVY);t.setPadding(0,14,0,6);return t;}
     TextView note(String s){TextView t=text(s,13,Color.rgb(100,115,141));t.setPadding(0,12,0,12);return t;}
     TextView cardLabel(String s){TextView t=text(s,15,NAVY);t.setTypeface(null,Typeface.BOLD);return t;}
-    View card(String s){TextView t=text(s,20,NAVY);t.setTypeface(null,1);t.setBackgroundColor(Color.WHITE);t.setPadding(16,16,16,16);t.setLayoutParams(margin());return t;}
+    View card(String s){TextView t=text(s,20,NAVY);t.setTypeface(null,Typeface.BOLD);t.setBackgroundColor(Color.WHITE);t.setPadding(16,16,16,16);t.setLayoutParams(margin());return t;}
     View info(String k,String v){TextView t=text(k+": "+v,14,Color.rgb(64,81,110));t.setBackgroundColor(Color.WHITE);t.setPadding(14,10,14,10);t.setLayoutParams(margin());return t;}
     EditText field(String hint){EditText e=new EditText(this);e.setHint(hint);e.setTextSize(16);e.setSingleLine();e.setPadding(14,12,14,12);e.setBackgroundColor(Color.WHITE);e.setLayoutParams(margin());return e;}
     EditText multi(String hint){EditText e=field(hint);e.setSingleLine(false);e.setMinLines(4);return e;}
