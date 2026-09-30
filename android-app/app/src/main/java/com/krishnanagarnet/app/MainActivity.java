@@ -1,4 +1,4 @@
-package com.krishnanagarnet.app;
+package com.krishnanagar.netapp;
 
 import android.Manifest;
 import android.app.*;
