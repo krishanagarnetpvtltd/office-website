@@ -40,8 +40,16 @@ jobs:
           ORG_GRADLE_PROJECT_ciKeyAlias: krishnanagar
         run: gradle assembleRelease --no-daemon
 
-      - name: Verify APK file exists
-        run: test -s android-app/app/build/outputs/apk/release/app-release.apk
+      - name: Verify APK with Android SDK tools
+        run: |
+          APK=android-app/app/build/outputs/apk/release/app-release.apk
+          test -s "$APK"
+          echo "=== APK BADGING ==="
+          "$ANDROID_HOME/build-tools/35.0.0/aapt2" dump badging "$APK"
+          echo "=== APK SIGNATURE ==="
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
+          echo "=== ZIPALIGN ==="
+          "$ANDROID_HOME/build-tools/35.0.0/zipalign" -c -P 4 -v 4 "$APK"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
