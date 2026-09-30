@@ -18,6 +18,6 @@ public class ReminderReceiver extends BroadcastReceiver {
             .setContentTitle("Krishnanagar Net")
             .setContentText("There are open customer complaints waiting for staff attention.")
             .setAutoCancel(true).setContentIntent(pi).build();
-        nm.notify(777,(int)(System.currentTimeMillis()/300000));
+        nm.notify((int)(System.currentTimeMillis()/300000),n);
     }
 }
