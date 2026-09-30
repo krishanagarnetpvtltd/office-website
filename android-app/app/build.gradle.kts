@@ -8,8 +8,8 @@ android {
         applicationId = "com.krishnanagar.netapp"
         minSdk = 23
         targetSdk = 34
-        versionCode = 5
-        versionName = "3.0.5"
+        versionCode = 6
+        versionName = "4.0.0"
     }
 
     buildTypes {
