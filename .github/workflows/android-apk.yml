@@ -25,13 +25,27 @@ jobs:
         with:
           gradle-version: "8.13"
 
-      - name: Build release APK
+      - name: Create temporary release signing key
         working-directory: android-app
+        run: |
+          STORE_PASS=$(openssl rand -hex 24)
+          echo "STORE_PASS=$STORE_PASS" >> "$GITHUB_ENV"
+          keytool -genkeypair -v             -keystore ci-release.jks             -storepass "$STORE_PASS"             -keypass "$STORE_PASS"             -alias krishnanagar             -keyalg RSA             -keysize 2048             -validity 10000             -dname "CN=Krishnanagar Net Pvt Ltd, OU=Mobile, O=Krishnanagar Net Pvt Ltd, L=Krishnanagar, ST=Lumbini, C=NP"
+
+      - name: Build signed release APK
+        working-directory: android-app
+        env:
+          ORG_GRADLE_PROJECT_ciStorePassword: ${{ env.STORE_PASS }}
+          ORG_GRADLE_PROJECT_ciKeyPassword: ${{ env.STORE_PASS }}
+          ORG_GRADLE_PROJECT_ciKeyAlias: krishnanagar
         run: gradle assembleRelease --no-daemon
+
+      - name: Verify APK file exists
+        run: test -s android-app/app/build/outputs/apk/release/app-release.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: krishnanagar-net-android-apk-v3.0.1
+          name: krishnanagar-net-android-apk-v3.0.3
           path: android-app/app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
