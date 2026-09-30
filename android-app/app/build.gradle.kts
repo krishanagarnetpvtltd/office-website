@@ -7,9 +7,9 @@ android {
     defaultConfig {
         applicationId = "com.krishnanagar.netapp"
         minSdk = 23
-        targetSdk = 33
-        versionCode = 3
-        versionName = "3.0.3"
+        targetSdk = 34
+        versionCode = 4
+        versionName = "3.0.4"
     }
 
     signingConfigs {
