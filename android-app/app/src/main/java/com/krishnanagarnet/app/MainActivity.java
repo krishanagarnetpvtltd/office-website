@@ -16,7 +16,6 @@ import android.widget.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.MessageDigest;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -33,6 +32,7 @@ public class MainActivity extends Activity {
     String role = "", currentPhone = "", currentName = "";
     double myLat = Double.NaN, myLng = Double.NaN;
     int radiusKm = 5;
+    LinearLayout nearbyList;
 
     @Override public void onCreate(Bundle b) {
         super.onCreate(b);
@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
 
     void showWelcome() {
         role=""; currentPhone=""; currentName="";
+        getSharedPreferences(PREFS,MODE_PRIVATE).edit().putBoolean("staffActive",false).apply();
         base("Krishnanagar Net");
         ImageView logo=new ImageView(this); logo.setImageResource(android.R.drawable.sym_def_app_icon); logo.setBackgroundColor(NAVY);
         LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(110,110); lp.gravity=Gravity.CENTER_HORIZONTAL; content.addView(logo,lp);
@@ -103,7 +104,9 @@ public class MainActivity extends Activity {
     }
 
     void customerDashboard() {
-        role="customer"; base("Customer Dashboard");
+        role="customer";
+        getSharedPreferences(PREFS,MODE_PRIVATE).edit().putBoolean("staffActive",false).apply();
+        base("Customer Dashboard");
         content.addView(card("Hello, "+currentName));
         content.addView(info("Customer ID",db.getCustomerId(currentPhone)));
         content.addView(info("Current Plan","100 Mbps"));
@@ -115,6 +118,7 @@ public class MainActivity extends Activity {
     }
 
     void raiseCustomerComplaint(){
+        myLat=Double.NaN; myLng=Double.NaN;
         base("Raise Complaint");
         EditText msg=multi("Describe your issue");
         Spinner cat=new Spinner(this); String[] cats={"No Internet","Slow Speed","Frequent Disconnection","Router / ONU","Billing","Other"}; cat.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,cats));
@@ -138,7 +142,9 @@ public class MainActivity extends Activity {
     }
 
     void staffDashboard(){
-        role="staff"; base("Staff / Helpdesk");
+        role="staff";
+        getSharedPreferences(PREFS,MODE_PRIVATE).edit().putBoolean("staffActive",true).apply();
+        base("Staff / Helpdesk");
         content.addView(card("Welcome, "+currentName));
         LinearLayout row=new LinearLayout(this); row.setGravity(Gravity.CENTER_VERTICAL);
         Spinner radius=new Spinner(this); ArrayList<String> rs=new ArrayList<>(); for(int x:new int[]{2,5,10,25})rs.add(x+" km");
@@ -149,6 +155,7 @@ public class MainActivity extends Activity {
         loc.setOnClickListener(v->getStaffLocationAndRefresh());
         Button create=button("➕ Raise Complaint for Customer",GREEN); create.setOnClickListener(v->staffCreateTicket()); content.addView(create);
         content.addView(label("Nearby open complaints"));
+        nearbyList=new LinearLayout(this); nearbyList.setOrientation(LinearLayout.VERTICAL); content.addView(nearbyList);
         loadNearby();
         Button refresh=button("🔄 Refresh",NAVY); refresh.setOnClickListener(v->loadNearby()); content.addView(refresh);
         content.addView(note("Nearby alerts are generated when this dashboard is open; a 5-minute reminder is scheduled for open unassigned tickets."));
@@ -156,18 +163,22 @@ public class MainActivity extends Activity {
     }
 
     void loadNearby(){
-        // Rebuild everything after the first 2 children (welcome/location controls) only when called from a fresh screen is complex.
-        // For reliability, just append the current result to the end.
+        if(nearbyList==null)return;
+        nearbyList.removeAllViews();
         List<Ticket> list=db.getOpenTickets();
         boolean found=false;
+        if(Double.isNaN(myLat)||Double.isNaN(myLng)){
+            nearbyList.addView(note("Share your staff location first to see nearby complaints."));
+            return;
+        }
         for(Ticket t:list){
+            if(Double.isNaN(t.lat)||Double.isNaN(t.lng))continue;
             double d=distanceKm(myLat,myLng,t.lat,t.lng);
-            if(Double.isNaN(d) || Double.isNaN(t.lat)) { if(Double.isNaN(myLat)) continue; }
-            if(!Double.isNaN(d) && d<=radiusKm || Double.isNaN(d)) {
-                found=true; content.addView(ticketCard(t,true));
+            if(!Double.isNaN(d) && d<=radiusKm){
+                found=true; nearbyList.addView(ticketCard(t,true));
             }
         }
-        if(!found) content.addView(note("No nearby complaints found. Attach customer location and share staff location to use distance filtering."));
+        if(!found) nearbyList.addView(note("No open complaints with customer locations were found within "+radiusKm+" km."));
     }
 
     View ticketCard(Ticket t, boolean staff){
@@ -189,6 +200,7 @@ public class MainActivity extends Activity {
     }
 
     void staffCreateTicket(){
+        myLat=Double.NaN; myLng=Double.NaN;
         base("Helpdesk Complaint");
         EditText lookup=field("Customer mobile"); EditText msg=multi("Issue description");
         Spinner cat=new Spinner(this); String[] cats={"No Internet","Slow Speed","Frequent Disconnection","Router / ONU","Billing","Other"}; cat.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,cats));
@@ -245,7 +257,7 @@ public class MainActivity extends Activity {
     }
 
     void callSupport(){try{startActivity(new Intent(Intent.ACTION_DIAL,android.net.Uri.parse("tel:9867400888")));}catch(Exception e){toast("Call failed");}}
-    void clearSession(){currentPhone="";currentName="";role="";}
+    void clearSession(){currentPhone="";currentName="";role="";myLat=Double.NaN;myLng=Double.NaN;getSharedPreferences(PREFS,MODE_PRIVATE).edit().putBoolean("staffActive",false).apply();}
     double distanceKm(double a,double b,double c,double d){if(Double.isNaN(a)||Double.isNaN(b)||Double.isNaN(c)||Double.isNaN(d))return Double.NaN;float[] r=new float[1];Location.distanceBetween(a,b,c,d,r);return r[0]/1000.0;}
 
     void seedStaff(){db.ensureStaff("9811940740","Krishnanagar Staff",hash("Staff@1234"));}
