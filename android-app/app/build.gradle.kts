@@ -1,15 +1,15 @@
 plugins { id("com.android.application") }
 
 android {
-    namespace = "com.krishnanagarnet.app"
+    namespace = "com.krishnanagar.netapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.krishnanagarnet.app"
+        applicationId = "com.krishnanagar.netapp"
         minSdk = 21
         targetSdk = 35
-        versionCode = 2
-        versionName = "3.0.1"
+        versionCode = 3
+        versionName = "3.0.2"
     }
 
     signingConfigs {
