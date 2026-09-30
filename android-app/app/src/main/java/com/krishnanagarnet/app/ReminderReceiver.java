@@ -1,4 +1,4 @@
-package com.krishnanagarnet.app;
+package com.krishnanagar.netapp;
 
 import android.app.*;
 import android.content.*;
