@@ -64,6 +64,7 @@ public class MainActivity extends Activity {
         content.addView(cardLabel("Choose your access"));
         Button c=button("Customer Login / Register",BLUE); c.setOnClickListener(v->showAuth("customer")); content.addView(c);
         Button s=button("Staff / Helpdesk Login",GREEN); s.setOnClickListener(v->showAuth("staff")); content.addView(s);
+        Button plans=button("View Internet Packages & New Connection Prices",NAVY); plans.setOnClickListener(v->showPackages(false)); content.addView(plans);
         content.addView(spacer(18));
         content.addView(note("Demo staff account: 9811940740 / Staff@1234"));
         content.addView(note("The APK works standalone for testing. Live CMS, RADIUS/OLT and cloud push integration are added later."));
@@ -121,6 +122,7 @@ public class MainActivity extends Activity {
 
         content.addView(sectionTitle("Quick actions"));
         Button service=button("My Internet Service",BLUE); service.setOnClickListener(v->showServiceDetails()); content.addView(service);
+        Button packages=button("Internet Packages & New Connection Charges",Color.rgb(0,130,150)); packages.setOnClickListener(v->showPackages(true)); content.addView(packages);
         Button complaint=button("Raise New Complaint",GREEN); complaint.setOnClickListener(v->raiseCustomerComplaint()); content.addView(complaint);
         Button tickets=button("My Complaints & Ticket History",NAVY); tickets.setOnClickListener(v->showMyTickets()); content.addView(tickets);
         Button troubleshoot=button("Run Internet Troubleshooter",Color.rgb(120,80,200)); troubleshoot.setOnClickListener(v->runTroubleshooter()); content.addView(troubleshoot);
@@ -134,12 +136,51 @@ public class MainActivity extends Activity {
         base("My Internet Service");
         content.addView(card("Service overview"));
         content.addView(info("Customer ID",db.getCustomerId(currentPhone)));
-        content.addView(info("Internet Plan","100 Mbps"));
+        content.addView(info("Internet Plan","Demo value - CMS not connected"));
         content.addView(info("Service Status","Active"));
         content.addView(info("Connection Area","Krishnanagar service area"));
         content.addView(note("Plan speed and service status are demo values in the standalone APK. These should be read from your CMS in the production integration."));
         Button trouble=button("Run Connection Test",BLUE); trouble.setOnClickListener(v->runTroubleshooter()); content.addView(trouble);
         Button back=button("Back to Dashboard",Color.GRAY); back.setOnClickListener(v->customerDashboard()); content.addView(back);
+    }
+
+    void showPackages(boolean fromCustomer){
+        base("New Connection Packages");
+        content.addView(card("Internet packages & connection charges"));
+        content.addView(note("All prices are in Nepalese rupees (NPR). These are the new-connection prices supplied by Krishnanagar Net."));
+
+        final String[] terms={"1M","3M","6M","12M"};
+        final String[][] planNames={
+            {"50 Mbps","1100,3200,6270,11220","3390,2260,1695,1130","6620,7590,10095,14480"},
+            {"80 Mbps","1200,3500,6840,12240","3390,2260,1695,1130","6720,7890,10665,15500"},
+            {"100 Mbps","1400,4100,7980,14280","3390,2260,1695,1130","6920,8490,11805,17540"},
+            {"150 Mbps","1500,4400,8550,15300","3390,2260,1695,1130","7020,8790,12375,18560"},
+            {"200 Mbps","1650,4800,9405,16830","3390,2260,1695,1130","7170,9190,13230,20090"}
+        };
+        for(String[] plan:planNames){
+            String[] pkg=plan[1].split(","), rental=plan[2].split(","), total=plan[3].split(",");
+            content.addView(sectionTitle(plan[0]+" / Internet Plan"));
+            LinearLayout cardBox=new LinearLayout(this); cardBox.setOrientation(LinearLayout.VERTICAL);
+            cardBox.setPadding(14,12,14,12); cardBox.setBackgroundColor(Color.WHITE);
+            TextView header=text("TERM        PACKAGE        ONU RENTAL        TOTAL",11,NAVY);
+            header.setTypeface(null,Typeface.BOLD); cardBox.addView(header);
+            for(int i=0;i<terms.length;i++){
+                LinearLayout line=new LinearLayout(this); line.setOrientation(LinearLayout.VERTICAL); line.setPadding(0,8,0,8);
+                TextView term=text(terms[i]+"  ·  Internet Rs. "+pkg[i],14,Color.rgb(45,61,89)); term.setTypeface(null,Typeface.BOLD); line.addView(term);
+                line.addView(text("ONU rental: Rs. "+rental[i],13,Color.rgb(85,100,125)));
+                TextView amount=text("Total payable: Rs. "+String.format(Locale.US,"%,d",Integer.parseInt(total[i])),15,GREEN); amount.setTypeface(null,Typeface.BOLD); line.addView(amount);
+                cardBox.addView(line);
+                if(i<terms.length-1){View div=new View(this);div.setBackgroundColor(Color.rgb(230,235,243));cardBox.addView(div,new LinearLayout.LayoutParams(MATCH,1));}
+            }
+            TextView common=text("Plus included in every total: DropWire Rs. 1,130 + refundable ONU deposit Rs. 1,000.",12,Color.rgb(100,115,141));
+            common.setPadding(0,10,0,2); cardBox.addView(common);
+            TextView vat=text("Prices include TSC & VAT.",12,Color.rgb(100,115,141)); cardBox.addView(vat);
+            cardBox.setLayoutParams(margin()); content.addView(cardBox);
+        }
+        content.addView(note("The ONU refundable deposit is included in the total amount paid at connection and is refundable subject to the company’s applicable return terms. Confirm availability and final charges with the office before placing a new connection order."));
+        Button call=button("Call 9867400888 for New Connection",BLUE); call.setOnClickListener(v->dial("9867400888")); content.addView(call);
+        Button support=button("Call 9811940740",GREEN); support.setOnClickListener(v->dial("9811940740")); content.addView(support);
+        Button back=button(fromCustomer?"Back to Dashboard":"Back",Color.GRAY); back.setOnClickListener(v->{if(fromCustomer)customerDashboard();else showWelcome();}); content.addView(back);
     }
 
     void showSupport(){
