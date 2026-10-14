@@ -151,11 +151,11 @@ public class MainActivity extends Activity {
 
         final String[] terms={"1M","3M","6M","12M"};
         final String[][] planNames={
-            {"50 Mbps","1100,3200,6270,11220","3390,2260,1695,1130","5620,6590,9095,13480"},
-            {"80 Mbps","1200,3500,6840,12240","3390,2260,1695,1130","5720,6890,9665,14500"},
-            {"100 Mbps","1400,4100,7980,14280","3390,2260,1695,1130","5920,7490,10805,16540"},
-            {"150 Mbps","1500,4400,8550,15300","3390,2260,1695,1130","6020,7790,11375,17560"},
-            {"200 Mbps","1650,4800,9405,16830","3390,2260,1695,1130","6170,8190,12230,19090"}
+            {"50 Mbps","1100,3200,6270,11220","3390,2260,1695,1130","6620,7590,10095,14480"},
+            {"80 Mbps","1200,3500,6840,12240","3390,2260,1695,1130","6720,7890,10665,15500"},
+            {"100 Mbps","1400,4100,7980,14280","3390,2260,1695,1130","6920,8490,11805,17540"},
+            {"150 Mbps","1500,4400,8550,15300","3390,2260,1695,1130","7020,8790,12375,18560"},
+            {"200 Mbps","1650,4800,9405,16830","3390,2260,1695,1130","7170,9190,13230,20090"}
         };
         for(String[] plan:planNames){
             String[] pkg=plan[1].split(","), rental=plan[2].split(","), total=plan[3].split(",");
@@ -172,12 +172,12 @@ public class MainActivity extends Activity {
                 cardBox.addView(line);
                 if(i<terms.length-1){View div=new View(this);div.setBackgroundColor(Color.rgb(230,235,243));cardBox.addView(div,new LinearLayout.LayoutParams(MATCH,1));}
             }
-            TextView common=text("DropWire charge of Rs. 1,130 is included in every total.",12,Color.rgb(100,115,141));
+            TextView common=text("Included in every total: DropWire Rs. 1,130 + refundable ONU deposit Rs. 1,000.",12,Color.rgb(100,115,141));
             common.setPadding(0,10,0,2); cardBox.addView(common);
             TextView vat=text("Prices include TSC & VAT.",12,Color.rgb(100,115,141)); cardBox.addView(vat);
             cardBox.setLayoutParams(margin()); content.addView(cardBox);
         }
-        content.addView(note("Confirm package availability and final installation charges with the office before placing a new connection order."));
+        content.addView(note("The Rs. 1,000 ONU deposit is refundable subject to the company's applicable equipment-return terms. Prices include TSC & VAT. Confirm availability and final charges with the office before placing a new connection order."));
         Button call=button("Call 9867400888 for New Connection",BLUE); call.setOnClickListener(v->dial("9867400888")); content.addView(call);
         Button support=button("Call 9811940740",GREEN); support.setOnClickListener(v->dial("9811940740")); content.addView(support);
         Button back=button(fromCustomer?"Back to Dashboard":"Back",Color.GRAY); back.setOnClickListener(v->{if(fromCustomer)customerDashboard();else showWelcome();}); content.addView(back);
