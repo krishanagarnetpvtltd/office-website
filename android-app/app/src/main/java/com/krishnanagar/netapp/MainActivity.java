@@ -177,7 +177,7 @@ public class MainActivity extends Activity {
             TextView vat=text("Prices include TSC & VAT.",12,Color.rgb(100,115,141)); cardBox.addView(vat);
             cardBox.setLayoutParams(margin()); content.addView(cardBox);
         }
-        content.addView(note("The refundable ONU deposit is not included in these totals. Confirm availability and final charges with the office before placing a new connection order."));
+        content.addView(note("Confirm package availability and final installation charges with the office before placing a new connection order."));
         Button call=button("Call 9867400888 for New Connection",BLUE); call.setOnClickListener(v->dial("9867400888")); content.addView(call);
         Button support=button("Call 9811940740",GREEN); support.setOnClickListener(v->dial("9811940740")); content.addView(support);
         Button back=button(fromCustomer?"Back to Dashboard":"Back",Color.GRAY); back.setOnClickListener(v->{if(fromCustomer)customerDashboard();else showWelcome();}); content.addView(back);
